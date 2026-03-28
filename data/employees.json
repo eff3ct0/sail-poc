@@ -1,0 +1,10 @@
+{"id":1,"name":"Alice","dept":"Engineering","salary":95000,"skills":["scala","spark","kafka"],"address":{"city":"Madrid","zip":"28001"}}
+{"id":2,"name":"Bob","dept":"Marketing","salary":72000,"skills":["python","sql"],"address":{"city":"Barcelona","zip":"08001"}}
+{"id":3,"name":"Charlie","dept":"Engineering","salary":110000,"skills":["scala","rust","datafusion"],"address":{"city":"Madrid","zip":"28002"}}
+{"id":4,"name":"Diana","dept":"Marketing","salary":68000,"skills":["sql","tableau"],"address":{"city":"Sevilla","zip":"41001"}}
+{"id":5,"name":"Eve","dept":"Engineering","salary":105000,"skills":["scala","spark","flink"],"address":{"city":"Barcelona","zip":"08002"}}
+{"id":6,"name":"Frank","dept":"Sales","salary":80000,"skills":["sql","crm"],"address":{"city":"Madrid","zip":"28003"}}
+{"id":7,"name":"Grace","dept":"Sales","salary":77000,"skills":["python","analytics"],"address":{"city":"Valencia","zip":"46001"}}
+{"id":8,"name":"Hector","dept":"Engineering","salary":92000,"skills":["java","spark"],"address":{"city":"Bilbao","zip":"48001"}}
+{"id":9,"name":"Irene","dept":"HR","salary":65000,"skills":["sql","people-analytics"],"address":{"city":"Madrid","zip":"28004"}}
+{"id":10,"name":"Juan","dept":"HR","salary":70000,"skills":["python","sql","tableau"],"address":{"city":"Barcelona","zip":"08003"}}

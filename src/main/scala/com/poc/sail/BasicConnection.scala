@@ -1,28 +1,20 @@
 package com.poc.sail
 
-import org.apache.spark.sql.SparkSession
-
 /**
  * Basic connection test: connect to Sail server via Spark Connect,
  * create a simple DataFrame and show it.
  */
 object BasicConnection extends App {
 
-  val sailHost = sys.env.getOrElse("SAIL_HOST", "localhost")
-  val sailPort = sys.env.getOrElse("SAIL_PORT", "50051")
-
-  val spark = SparkSession
-    .builder()
-    .remote(s"sc://$sailHost:$sailPort")
-    .build()
+  val spark = SailSession()
+  import spark.implicits._
 
   println("=== Connected to Sail via Spark Connect ===")
   println(s"Spark version reported: ${spark.version}")
 
   // 1. Simple range DataFrame
   println("\n--- Range DataFrame ---")
-  val df = spark.range(10)
-  df.show()
+  spark.range(10).show()
 
   // 2. SQL expression
   println("\n--- SQL Expression ---")
@@ -30,8 +22,6 @@ object BasicConnection extends App {
 
   // 3. Create DataFrame from Seq and do transformations
   println("\n--- DataFrame Transformations ---")
-  import spark.implicits._
-
   val data = Seq(
     ("Alice", 34, "Engineering"),
     ("Bob", 28, "Marketing"),
@@ -43,8 +33,7 @@ object BasicConnection extends App {
   data.show()
 
   println("--- Group by department ---")
-  data
-    .groupBy("department")
+  data.groupBy("department")
     .agg(
       org.apache.spark.sql.functions.count("*").as("count"),
       org.apache.spark.sql.functions.avg("age").as("avg_age")

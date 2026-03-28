@@ -1,25 +1,13 @@
 package com.poc.sail
 
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
-/**
- * Read a CSV file through Sail/DataFusion, do some transformations,
- * and write the result as Parquet.
- */
+/** Read a CSV file through Sail/DataFusion, transform, write as Parquet. */
 object CsvExample extends App {
-
-  val sailHost = sys.env.getOrElse("SAIL_HOST", "localhost")
-  val sailPort = sys.env.getOrElse("SAIL_PORT", "50051")
-
-  val spark = SparkSession
-    .builder()
-    .remote(s"sc://$sailHost:$sailPort")
-    .build()
+  val spark = SailSession()
 
   println("=== CSV -> Transform -> Parquet via Sail ===")
 
-  // Read CSV
   val df = spark.read
     .option("header", "true")
     .option("inferSchema", "true")
@@ -29,7 +17,6 @@ object CsvExample extends App {
   df.show()
   df.printSchema()
 
-  // Transformations
   val result = df
     .withColumn("name_upper", upper(col("name")))
     .withColumn("salary_eur", col("salary") * 0.92)
@@ -39,11 +26,7 @@ object CsvExample extends App {
   println("--- Transformed data ---")
   result.show()
 
-  // Write as Parquet
-  result.write
-    .mode("overwrite")
-    .parquet("output/filtered_employees.parquet")
-
+  result.write.mode("overwrite").parquet("output/filtered_employees.parquet")
   println("=== Parquet written to output/filtered_employees.parquet ===")
 
   spark.stop()

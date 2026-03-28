@@ -1,0 +1,21 @@
+tx_id,employee_id,amount,category,tx_date,description
+1,1,1200.50,equipment,2024-01-15,Laptop upgrade
+2,3,350.00,books,2024-01-20,Technical books
+3,1,89.99,software,2024-02-01,IDE license
+4,5,2500.00,equipment,2024-02-10,Monitor setup
+5,2,150.00,travel,2024-02-15,Client meeting
+6,6,3200.00,travel,2024-03-01,Sales conference
+7,3,45.00,software,2024-03-05,Cloud credits
+8,4,780.00,marketing,2024-03-10,Ad campaign
+9,7,1100.00,travel,2024-03-15,Sales trip
+10,8,200.00,books,2024-03-20,Online course
+11,1,500.00,software,2024-04-01,Testing tools
+12,5,120.00,books,2024-04-05,Rust book
+13,9,90.00,office,2024-04-10,Office supplies
+14,2,2200.00,marketing,2024-04-15,Campaign Q2
+15,10,175.00,training,2024-04-20,HR certification
+16,3,8000.00,equipment,2024-05-01,Server cluster
+17,6,450.00,travel,2024-05-10,Client visit
+18,1,60.00,software,2024-05-15,Monitoring tool
+19,4,1500.00,marketing,2024-06-01,Branding refresh
+20,5,300.00,books,2024-06-10,Conference proceedings

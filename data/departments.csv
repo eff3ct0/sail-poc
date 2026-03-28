@@ -1,0 +1,5 @@
+dept_name,budget,manager_id,floor,created_date
+Engineering,500000,3,5,2020-01-15
+Marketing,200000,2,3,2020-03-01
+Sales,180000,6,2,2020-03-01
+HR,120000,9,1,2021-06-01
