@@ -1,0 +1,10 @@
+services:
+  sail:
+    image: ghcr.io/lakehq/sail:latest
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./data:/opt/sail/data
+      - ./output:/opt/sail/output
+    environment:
+      - RUST_LOG=info
